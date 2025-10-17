@@ -46,3 +46,17 @@ coverage/
 Thumbs.db
 .DS_Store
 
+# Next.js (from remote)
+/.next/
+/out/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+*.pem
+.vercel
+next-env.d.ts
+*.tsbuildinfo
