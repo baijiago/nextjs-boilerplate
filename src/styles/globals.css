@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+:root {
+--background: 210 15% 98%;
+--foreground: 210 3% 8%;
+--muted: 210 12% 95%;
+--muted-foreground: 210 6% 60%;
+--popover: 210 15% 98%;
+--popover-foreground: 210 3% 8%;
+--card: 210 12% 95%;
+--card-foreground: 210 3% 8%;
+--border: 210 10% 88%;
+--input: 210 10% 88%;
+--primary: 145 25% 55%;
+--primary-foreground: 210 15% 98%;
+--secondary: 210 22% 65%;
+--secondary-foreground: 210 15% 98%;
+--accent: 270 20% 70%;
+--accent-foreground: 210 3% 8%;
+--destructive: 0 40% 65%;
+--destructive-foreground: 210 15% 98%;
+--ring: 145 25% 55%;
+--radius: 0.75rem;
+--chart-1: 145 25% 55%;
+--chart-2: 210 22% 65%;
+--chart-3: 270 20% 70%;
+--chart-4: 142 35% 60%;
+--chart-5: 38 45% 65%;
+--sidebar-background: 210 15% 98%;
+--sidebar-foreground: 210 4% 35%;
+--sidebar-primary: 145 25% 55%;
+--sidebar-primary-foreground: 210 15% 98%;
+--sidebar-accent: 210 12% 95%;
+--sidebar-accent-foreground: 210 4% 35%;
+--sidebar-border: 210 10% 88%;
+--sidebar-ring: 145 25% 55%;
+}
+
+.dark {
+--background: 210 3% 8%;
+--foreground: 210 15% 95%;
+--muted: 210 4% 15%;
+--muted-foreground: 210 6% 60%;
+--popover: 210 3% 8%;
+--popover-foreground: 210 15% 95%;
+--card: 210 4% 12%;
+--card-foreground: 210 15% 95%;
+--border: 210 8% 20%;
+--input: 210 8% 20%;
+--primary: 145 25% 55%;
+--primary-foreground: 210 3% 8%;
+--secondary: 210 22% 45%;
+--secondary-foreground: 210 15% 95%;
+--accent: 270 20% 50%;
+--accent-foreground: 210 15% 95%;
+--destructive: 0 40% 65%;
+--destructive-foreground: 210 15% 95%;
+--ring: 145 25% 55%;
+--sidebar-background: 210 3% 8%;
+--sidebar-foreground: 210 8% 75%;
+--sidebar-primary: 145 25% 55%;
+--sidebar-primary-foreground: 210 3% 8%;
+--sidebar-accent: 210 4% 15%;
+--sidebar-accent-foreground: 210 8% 75%;
+--sidebar-border: 210 8% 20%;
+--sidebar-ring: 145 25% 55%;
+}
+}
+
+@layer base {
+* {
+@apply border-border;
+}
+body {
+@apply bg-background text-foreground font-sans antialiased;
+}
+}
+
+@layer components {
+/* Bento Grid 组件样式 */
+.bento-container {
+  @apply bg-gradient-to-br from-bento-neutral-50 to-bento-neutral-100 min-h-screen;
+}
+
+.bento-grid {
+  @apply grid gap-3 md:gap-4 auto-rows-[minmax(120px,auto)];
+  @apply grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8;
+}
+
+.bento-item {
+  @apply relative overflow-hidden rounded-xl border border-solid backdrop-blur-sm;
+  @apply shadow-sm hover:shadow-md transition-all duration-300 ease-out;
+}
+
+.bento-item-primary {
+  @apply bg-gradient-to-br from-bento-primary-light/30 to-bento-primary/20;
+  @apply border-bento-primary/30 hover:border-bento-primary/50;
+}
+
+.bento-item-secondary {
+  @apply bg-gradient-to-br from-bento-secondary-light/30 to-bento-secondary/20;
+  @apply border-bento-secondary/30 hover:border-bento-secondary/50;
+}
+
+.bento-item-accent {
+  @apply bg-gradient-to-br from-bento-accent-light/30 to-bento-accent/20;
+  @apply border-bento-accent/30 hover:border-bento-accent/50;
+}
+
+.bento-item-neutral {
+  @apply bg-gradient-to-br from-bento-neutral-50 to-white;
+  @apply border-bento-neutral-200/60 hover:border-bento-neutral-300/80;
+}
+
+/* Bento Grid 文字层级样式 */
+.bento-title {
+  @apply text-module-title text-bento-neutral-800 font-sans-cn;
+}
+
+.bento-title-sm {
+  @apply text-module-title-sm text-bento-neutral-800 font-sans-cn;
+}
+
+.bento-content {
+  @apply text-module-content text-bento-neutral-600 font-sans-cn;
+}
+
+.bento-content-sm {
+  @apply text-module-content-sm text-bento-neutral-600 font-sans-cn;
+}
+
+.bento-caption {
+  @apply text-module-caption text-bento-neutral-500 font-sans-cn;
+}
+
+.bento-caption-sm {
+  @apply text-module-caption-sm text-bento-neutral-500 font-sans-cn;
+}
+
+/* Bento Grid 交互动效 */
+.bento-interactive {
+  @apply cursor-pointer hover:scale-[1.02] active:scale-[0.98];
+  @apply hover:-translate-y-1 transition-transform duration-200;
+}
+
+/* 保留原有样式以确保兼容性 */
+.sri-gradient {
+@apply bg-gradient-to-br from-psychology-calm/20 to-psychology-warm/20 backdrop-blur-sm;
+}
+
+.sri-card {
+@apply bg-card/90 backdrop-blur-sm border border-border/30 rounded-xl shadow-lg shadow-psychology-primary/10;
+}
+
+.sri-section {
+@apply py-12 px-4 sm:px-6 lg:px-8;
+}
+
+.sri-heading {
+@apply text-3xl font-bold tracking-tight text-foreground sm:text-4xl;
+}
+
+.sri-subheading {
+@apply text-xl font-semibold text-foreground/95;
+}
+
+.sri-text {
+@apply text-foreground/80 leading-relaxed;
+}
+
+.sri-button-primary {
+@apply bg-psychology-primary hover:bg-psychology-primary/90 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-psychology-primary/20;
+}
+
+.sri-button-secondary {
+@apply bg-psychology-secondary hover:bg-psychology-secondary/90 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200;
+}
+
+.sri-input {
+@apply w-full px-4 py-3 border border-input rounded-lg bg-background/50 backdrop-blur-sm text-foreground focus:outline-none focus:ring-2 focus:ring-psychology-primary focus:border-transparent transition-all duration-200;
+}
+
+.question-card {
+@apply sri-card p-6 space-y-4 animate-fade-in;
+}
+
+.scale-option {
+@apply flex items-center justify-between p-3 border border-border/30 rounded-lg hover:bg-muted/30 transition-colors cursor-pointer backdrop-blur-sm;
+}
+
+.scale-option.selected {
+@apply bg-psychology-primary/20 border-psychology-primary;
+}
+
+.progress-bar {
+@apply h-2 bg-muted/30 rounded-full overflow-hidden backdrop-blur-sm;
+}
+
+.progress-fill {
+@apply h-full bg-gradient-to-r from-psychology-primary to-psychology-accent transition-all duration-500 ease-out;
+}
+
+.dimension-card {
+@apply sri-card p-4 text-center space-y-2;
+}
+
+.radar-chart {
+@apply w-full h-64 sri-card p-4;
+}
+
+.result-badge {
+@apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm;
+}
+
+.result-badge.low {
+@apply bg-psychology-identify/20 text-psychology-identify border border-psychology-identify/30;
+}
+
+.result-badge.moderate {
+@apply bg-yellow-400/20 text-yellow-300 border border-yellow-400/30;
+}
+
+.result-badge.high {
+@apply bg-psychology-emotion/20 text-psychology-emotion border border-psychology-emotion/30;
+}
+
+.result-badge.very-high {
+@apply bg-psychology-danger/20 text-psychology-danger border border-psychology-danger/30;
+}
+}
+
+@layer utilities {
+.text-balance {
+text-wrap: balance;
+}
+}
