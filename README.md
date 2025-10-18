@@ -25,7 +25,7 @@
 
 ### 安装和运行
 
-```
+```bash
 # 克隆项目
 git clone [project-url]
 cd Sexual-Repression-Calculator
@@ -53,6 +53,39 @@ docker run -p 8000:8000 appe233/sexual-repression-calculator
 
 - 开发环境: http://localhost:3000
 - 生产环境: 根据部署配置
+
+## Next.js 开发
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+### 开发服务器
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+打开 [http://localhost:3000](http://localhost:3000) 查看应用。
+
+你可以通过修改 `app/page.tsx` 来编辑页面，页面会自动更新。
+
+本项目使用 [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) 来自动优化和加载 [Geist](https://vercel.com/font) 字体。
+
+### 了解更多
+
+- [Next.js Documentation](https://nextjs.org/docs) - 学习 Next.js 功能和 API
+- [Learn Next.js](https://nextjs.org/learn) - 交互式 Next.js 教程
+
+### 部署
+
+最简单的部署方式是使用 [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)。
+
+查看 [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) 了解更多详情。
 
 ## ☁️ Cloudflare Pages 部署
 
@@ -227,7 +260,7 @@ src/
 
 ### 测试
 
-```
+```bash
 # 类型检查
 npm run type-check
 
